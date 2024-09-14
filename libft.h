@@ -14,12 +14,12 @@
 # define LIBFT_H
 # include <stdlib.h>
 
-int	ft_isdigit(int n);
-int	ft_isalpha(int n);
-int	ft_isalnum(int n);
-int	ft_isascii(int n);
-int	ft_isprint(int n);
-int	ft_strlen(char *str);
-void *ft_memset(void *s, int c, size_t len);
+int		ft_isdigit(int n);
+int		ft_isalpha(int n);
+int		ft_isalnum(int n);
+int		ft_isascii(int n);
+int		ft_isprint(int n);
+int		ft_strlen(char *str);
+void	*ft_memset(void *s, int c, size_t len);
 
 #endif
