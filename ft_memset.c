@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsabroso <jsabroso@student.42malaga.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 10:23:39 by jsabroso          #+#    #+#             */
-/*   Updated: 2024/09/14 10:23:39 by jsabroso         ###   ########.fr       */
+/*   Created: 2024/09/14 11:39:23 by jsabroso          #+#    #+#             */
+/*   Updated: 2024/09/14 11:39:23 by jsabroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
+// Fills the first len bytes of pointer s with the constant byte c.
+void	*ft_memset(void *s, int c, size_t len)
+{
+	size_t	i;
+	int		*p;
 
-int	ft_isdigit(int n);
-int	ft_isalpha(int n);
-int	ft_isalnum(int n);
-int	ft_isascii(int n);
-int	ft_isprint(int n);
-int	ft_strlen(char *str);
-void *ft_memset(void *s, int c, size_t len);
-
-#endif
+	i = 0;
+	while (i < len)
+	{
+		p[i] = c;
+	}
+	return (p);
+}
