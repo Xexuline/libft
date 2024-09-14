@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+// copies n bytes from memory area src to memory area dst
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char		*dst_char;
-	char		*src_char;
+	unsigned char		*dst_char;
+	unsigned char		*src_char;
 	size_t	i;
 
 	i = 0;
