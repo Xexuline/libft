@@ -29,6 +29,7 @@ int	main(void)
 	printf("\nEOF memset\n");
 
 	// strlcat
+	// launch with flag -lbsd
 	printf("strlcat\n");
 	char dst[3] = "bye";
 	char dst2[3] = "bye";
