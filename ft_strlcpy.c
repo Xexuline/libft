@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-// Copies len - 1 chars from src to dst, and adds a null terminator
-void	ft_strlcpy(char *dst, const char *src, size_t len)
+//Copies chars from src to dst, adds a null terminator and returns the length
+size_t	ft_strlcpy(char *dst, const char *src, size_t len)
 {
 	size_t	i;
 
@@ -22,4 +22,5 @@ void	ft_strlcpy(char *dst, const char *src, size_t len)
 		i++;
 	}
 	dst[i] = '\0';
+	return (i);
 }
