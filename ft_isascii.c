@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Returns 1 if n is an ASCII character, 0 otherwise.
 int	ft_isascii(int n)
 {
 	if (n >= 0 && n <= 127)

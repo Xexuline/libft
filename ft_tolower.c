@@ -9,6 +9,8 @@
 /*   Updated: 2024/09/14 17:39:19 by jsabroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Converts an uppercase letter to lowercase.
 int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)

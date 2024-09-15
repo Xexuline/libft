@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+// Returns 1 if n is an alphanumeric character, 0 otherwise.
 int	ft_isalnum(int n)
 {
 	if (ft_isdigit(n) || ft_isalpha(n))

@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
 //Copies chars from src to dst, adds a null terminator and returns the length
 size_t	ft_strlcpy(char *dst, const char *src, size_t len)
 {
