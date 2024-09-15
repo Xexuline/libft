@@ -19,7 +19,7 @@ int		ft_isalpha(int n);
 int		ft_isalnum(int n);
 int		ft_isascii(int n);
 int		ft_isprint(int n);
-int		ft_strlen(char *str);
+size_t	ft_strlen(char *str);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	*ft_memset(void *s, int c, size_t len);
