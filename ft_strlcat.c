@@ -6,9 +6,10 @@
 /*   By: jsabroso <jsabroso@student.42malaga.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:51:39 by jsabroso          #+#    #+#             */
-/*   Updated: 2024/09/15 12:51:39 by jsabroso         ###   ########.fr       */
+/*   Updated: 2024/09/23 18:41:47 by jsabroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 // Appends the string src to the end of dst
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
