@@ -54,8 +54,17 @@ void	test_strrchr(void) // run with -lbsd flags
 	printf("res: %s\n", ft_strrchr("hola que ase", 'a'));
 	printf("res: %s\n", strrchr("hola que ase", 'a'));
 }
+
+void	test_strncmp(void)
+{
+	const char s1[] = "hola que ase";
+	const char s2[] = "hola que tase";
+
+	printf("res: %d\n", ft_strncmp(s1, s2, 20));
+	printf("ori: %d\n", strncmp(s1, s2, 20));
+}
 int	main(void)
 {
-	test_strrchr();
+	test_strncmp();
 	return (0);
 }
