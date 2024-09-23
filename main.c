@@ -63,8 +63,18 @@ void	test_strncmp(void)
 	printf("res: %d\n", ft_strncmp(s1, s2, 20));
 	printf("ori: %d\n", strncmp(s1, s2, 20));
 }
+
+void	test_memchr(void)
+{
+	const char s[] = "hola que ase";
+	const char c = 'q';
+
+	printf("res: %s\n", (char *)ft_memchr(s, c, 20));
+	printf("ori: %s\n", (char *)memchr(s, c, 20));
+}
+
 int	main(void)
 {
-	test_strncmp();
+	test_memchr();
 	return (0);
 }
