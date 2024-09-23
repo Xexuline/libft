@@ -10,25 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
 // Appends the string src to the end of dst
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
 	size_t	dst_len;
 	size_t	src_len;
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen((char *)src);
-	if (dstsize == 0)
-		return (src_len);
-
-	i = 0;
-	while (dst[i] && (i < dstsize - dst_len - 1))
+	if (dst_len >= dstsize)
+		dst_len = dstsize;
+	if (dst_len == dstsize)
+		return (src_len + dstsize);
+	if (src_len < (dstsize - dst_len))
 	{
-		dst[dst_len + i] = src[i];
-		i++;
+		ft_memcpy(dst + dst_len, src, dstsize - src_len + 1);
 	}
-
+	else
+	{
+		ft_memcpy(dst + dst_len, src, dstsize - dst_len - 1);
+		dst[dstsize - 1] = '\0';
+	}
 	return (dst_len + src_len);
 }

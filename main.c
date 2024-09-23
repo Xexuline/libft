@@ -18,6 +18,7 @@
 int	main(void)
 {
 	// memset
+	/*
 	printf("memset\n");
 	int *str = malloc(sizeof(int) * 10);
 	int *str2 = malloc(sizeof(int) * 10);
@@ -27,19 +28,21 @@ int	main(void)
 	printf("exer: %s\n", (char *)str);
 	printf("real: %s\n", (char *)str2);
 	printf("\nEOF memset\n");
+	*/
 
 	// strlcat
 	// launch with flag -lbsd
 	printf("strlcat\n");
-	char dst[3] = "bye";
-	char dst2[3] = "bye";
+	char dst[9]= "someword";
+	char dst2[9]= "someword";
 	char *src = "Hello";
+	char *src2= "Hello";
 	size_t total;
 	size_t total2;
-	total = ft_strlcat(dst, src, 10);
-	total2 = strlcat(dst2, src, 10);
-	printf("total: %d - %s\n",(int)total, dst);
-	printf("total2: %d - %s\n",(int)total2, dst2);
+	total = ft_strlcat(dst, src, 7);
+	total2 = strlcat(dst2, src2, 7);
+	printf("total mio: %d - %s\n",(int)total, dst);
+	printf("total ori: %d - %s\n",(int)total2, dst2);
 	printf("EOF strlcat\n");
 
 	return (0);
