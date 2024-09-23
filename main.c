@@ -15,10 +15,8 @@
 #include <string.h>
 #include <bsd/string.h>
 
-int	main(void)
+void test_memset(void)
 {
-	// memset
-	/*
 	printf("memset\n");
 	int *str = malloc(sizeof(int) * 10);
 	int *str2 = malloc(sizeof(int) * 10);
@@ -28,22 +26,30 @@ int	main(void)
 	printf("exer: %s\n", (char *)str);
 	printf("real: %s\n", (char *)str2);
 	printf("\nEOF memset\n");
-	*/
-
-	// strlcat
-	// launch with flag -lbsd
-	printf("strlcat\n");
-	char dst[9]= "someword";
-	char dst2[9]= "someword";
-	char *src = "Hello";
-	char *src2= "Hello";
+}
+	
+void test_strlcat(void)
+{
 	size_t total;
 	size_t total2;
+	char dst[9]= "someword";
+	char dst2[9]= "someword";
+	char *src= "Hello";
+	char *src2= "Hello";
 	total = ft_strlcat(dst, src, 7);
 	total2 = strlcat(dst2, src2, 7);
 	printf("total mio: %d - %s\n",(int)total, dst);
 	printf("total ori: %d - %s\n",(int)total2, dst2);
 	printf("EOF strlcat\n");
+}
 
+void test_strchr(void)
+{
+	printf("res: %s\n", ft_strchr("hola que ase", '8'));
+	printf("res: %s\n", strchr("hola que ase", '8'));
+}
+int	main(void)
+{
+	test_strchr();
 	return (0);
 }
