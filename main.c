@@ -15,7 +15,7 @@
 #include <string.h>
 #include <bsd/string.h>
 
-void test_memset(void)
+void	test_memset(void)
 {
 	printf("memset\n");
 	int *str = malloc(sizeof(int) * 10);
@@ -27,8 +27,8 @@ void test_memset(void)
 	printf("real: %s\n", (char *)str2);
 	printf("\nEOF memset\n");
 }
-	
-void test_strlcat(void)
+
+void	test_strlcat(void)
 {
 	size_t total;
 	size_t total2;
@@ -43,13 +43,19 @@ void test_strlcat(void)
 	printf("EOF strlcat\n");
 }
 
-void test_strchr(void)
+void	test_strchr(void) // run with -lbsd flags
 {
 	printf("res: %s\n", ft_strchr("hola que ase", '8'));
 	printf("res: %s\n", strchr("hola que ase", '8'));
 }
+
+void	test_strrchr(void) // run with -lbsd flags
+{
+	printf("res: %s\n", ft_strrchr("hola que ase", 'a'));
+	printf("res: %s\n", strrchr("hola que ase", 'a'));
+}
 int	main(void)
 {
-	test_strchr();
+	test_strrchr();
 	return (0);
 }
