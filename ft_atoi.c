@@ -23,17 +23,14 @@ int	ft_atoi(char *nptr)
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{
-
 		if (*nptr == '-')
 			is_negative *= -1;
 		nptr++;
 	}
 	while (*nptr != '\0' && ft_isdigit(*nptr - '0'))
 	{
-
 		num *= 10;
 		num += (*nptr - '0');
-
 		nptr++;
 	}
 	return (num * is_negative);
