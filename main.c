@@ -111,6 +111,8 @@ void test_atoi(void)
 	char num3[] = "+123";
 	char num4[] = "123a";
 	char num5[] = "-a234";
+	char limit_max[] = "2147483647";
+	char limit_min[] = "-2147483648";
 
 	printf("res: %s -> %d\n", num1, ft_atoi(num1));
 	printf("ori: %s -> %d\n", num1, atoi(num1));
@@ -122,6 +124,10 @@ void test_atoi(void)
 	printf("ori: %s -> %d\n", num4, atoi(num4));
 	printf("res: %s -> %d\n", num5, ft_atoi(num5));
 	printf("ori: %s -> %d\n", num5, atoi(num5));
+	printf("res: %s -> %d\n", limit_max, ft_atoi(limit_max));
+	printf("ori: %s -> %d\n", limit_max, atoi(limit_max));
+	printf("res: %s -> %d\n", limit_min, ft_atoi(limit_min));
+	printf("ori: %s -> %d\n", limit_min, atoi(limit_min));
 
 }
 
