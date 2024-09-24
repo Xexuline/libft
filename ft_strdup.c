@@ -25,5 +25,6 @@ char	*ft_strdup(const char *s)
 		return (NULL);
 	while (i++ < size)
 		str[i] = s[i];
+	str[size] = '\0';
 	return (str);
 }
