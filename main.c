@@ -73,8 +73,23 @@ void	test_memchr(void)
 	printf("ori: %s\n", (char *)memchr(s, c, 20));
 }
 
+void	test_memcmp(void)
+{
+	const char s1[] = "houa que ase";
+	const char s2[] = "hola que ase";
+	const char s3[] = "ho";
+	const char s4[] = "hola que ase";
+
+	printf("res: %d\n", ft_memcmp(s1, s2, 5));
+	printf("ori: %d\n", memcmp(s1, s2, 5));
+	printf("res: %d\n", ft_memcmp(s3, s4, 5));
+	printf("ori: %d\n", memcmp(s3, s4, 5));
+	printf("res: %d\n", ft_memcmp(s3, s4, 0));
+	printf("ori: %d\n", memcmp(s3, s4, 0));
+}
+
 int	main(void)
 {
-	test_memchr();
+	test_memcmp();
 	return (0);
 }
