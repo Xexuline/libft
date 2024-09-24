@@ -88,7 +88,7 @@ void	test_memcmp(void)
 	printf("ori: %d\n", memcmp(s3, s4, 0));
 }
 
-void test_strnstr(void)
+void 	test_strnstr(void)
 {
 	const char s1[] = "hola que tase";
 	const char s2[] = "";
@@ -104,7 +104,7 @@ void test_strnstr(void)
 	printf("res: %s\n", ft_strnstr("", s4, 8));
 	printf("ori: %s\n", strnstr("", s4, 8));
 }
-void test_atoi(void)
+void 	test_atoi(void)
 {
 	char num1[] = "  -123";
 	char num2[] = "--123";
@@ -131,8 +131,16 @@ void test_atoi(void)
 
 }
 
+void	test_calloc(void) // run with valgrind1 to check
+{
+	int rows = 20;
+	int cols = (2147483648 / rows) +1 ;
+	ft_calloc(rows, cols);
+	calloc(rows, cols);
+}
+
 int	main(void)
 {
-	test_atoi();
+	test_calloc();
 	return (0);
 }
