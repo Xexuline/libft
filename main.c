@@ -104,9 +104,29 @@ void test_strnstr(void)
 	printf("res: %s\n", ft_strnstr("", s4, 8));
 	printf("ori: %s\n", strnstr("", s4, 8));
 }
+void test_atoi(void)
+{
+	char num1[] = "  -123";
+	char num2[] = "--123";
+	char num3[] = "+123";
+	char num4[] = "123a";
+	char num5[] = "-a234";
+
+	printf("res: %s -> %d\n", num1, ft_atoi(num1));
+	printf("ori: %s -> %d\n", num1, atoi(num1));
+	printf("res: %s -> %d\n", num2, ft_atoi(num2));
+	printf("ori: %s -> %d\n", num2, atoi(num2));
+	printf("res: %s -> %d\n", num3, ft_atoi(num3));
+	printf("ori: %s -> %d\n", num3, atoi(num3));
+	printf("res: %s -> %d\n", num4, ft_atoi(num4));
+	printf("ori: %s -> %d\n", num4, atoi(num4));
+	printf("res: %s -> %d\n", num5, ft_atoi(num5));
+	printf("ori: %s -> %d\n", num5, atoi(num5));
+
+}
 
 int	main(void)
 {
-	test_strnstr();
+	test_atoi();
 	return (0);
 }
