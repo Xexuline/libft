@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <stdlib.h>
 // Remove next headers
-# include <stdio.h>
 
 int		ft_isdigit(int n);
 int		ft_isalpha(int n);
