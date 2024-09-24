@@ -88,8 +88,25 @@ void	test_memcmp(void)
 	printf("ori: %d\n", memcmp(s3, s4, 0));
 }
 
+void test_strnstr(void)
+{
+	const char s1[] = "hola que tase";
+	const char s2[] = "";
+	const char s3[] = "que";
+	const char s4[] = "pe";
+
+	printf("res: %s\n", ft_strnstr(s1, s2, 3));
+	printf("ori: %s\n", strnstr(s1, s2, 3));
+	printf("res: %s\n", ft_strnstr(s1, s3, 8));
+	printf("ori: %s\n", strnstr(s1, s3, 8));
+	printf("res: %s\n", ft_strnstr(s1, s4, 8));
+	printf("ori: %s\n", strnstr(s1, s4, 8));
+	printf("res: %s\n", ft_strnstr("", s4, 8));
+	printf("ori: %s\n", strnstr("", s4, 8));
+}
+
 int	main(void)
 {
-	test_memcmp();
+	test_strnstr();
 	return (0);
 }
