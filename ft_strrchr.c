@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	len = ft_strlen((char *)s);
 	if (s[len + 1] == (char)c)
 		return ((char *)&s[len]);
-	while (len >= 0)
+	while (len)
 	{
 		if ((char)c == s[len])
 			return ((char *)&s[len]);

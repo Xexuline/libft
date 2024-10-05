@@ -31,22 +31,23 @@ void	test_memset(void)
 void	test_strlcat(void)
 {
 	size_t total;
-	size_t total2;
+	//size_t total2;
 	char dst[9]= "someword";
-	char dst2[9]= "someword";
+	//char dst2[9]= "someword";
 	char *src= "Hello";
-	char *src2= "Hello";
+	//char *src2= "Hello";
 	total = ft_strlcat(dst, src, 7);
-	total2 = strlcat(dst2, src2, 7);
+	//total2 = strlcat(dst2, src2, 7);
 	printf("total mio: %d - %s\n",(int)total, dst);
-	printf("total ori: %d - %s\n",(int)total2, dst2);
+	//printf("total ori: %d - %s\n",(int)total2, dst2);
 	printf("EOF strlcat\n");
 }
 
 void	test_strchr(void) // run with -lbsd flags
 {
-	printf("res: %s\n", ft_strchr("hola que ase", '8'));
-	printf("res: %s\n", strchr("hola que ase", '8'));
+	char str[] = "hola que ase";
+	printf("res: %s\n", ft_strchr(str, '8'));
+	printf("res: %s\n", strchr(str, '8'));
 }
 
 void	test_strrchr(void) // run with -lbsd flags
@@ -96,13 +97,13 @@ void 	test_strnstr(void)
 	const char s4[] = "pe";
 
 	printf("res: %s\n", ft_strnstr(s1, s2, 3));
-	printf("ori: %s\n", strnstr(s1, s2, 3));
+	// printf("ori: %s\n", strnstr(s1, s2, 3));
 	printf("res: %s\n", ft_strnstr(s1, s3, 8));
-	printf("ori: %s\n", strnstr(s1, s3, 8));
+	// printf("ori: %s\n", strnstr(s1, s3, 8));
 	printf("res: %s\n", ft_strnstr(s1, s4, 8));
-	printf("ori: %s\n", strnstr(s1, s4, 8));
+	// printf("ori: %s\n", strnstr(s1, s4, 8));
 	printf("res: %s\n", ft_strnstr("", s4, 8));
-	printf("ori: %s\n", strnstr("", s4, 8));
+	// printf("ori: %s\n", strnstr("", s4, 8));
 }
 void 	test_atoi(void)
 {
@@ -135,8 +136,12 @@ void	test_calloc(void) // run with valgrind1 to check
 {
 	int rows = 20;
 	int cols = (2147483648 / rows) +1 ;
-	ft_calloc(rows, cols);
-	calloc(rows, cols);
+	char *tmp;
+	char *tmp2;
+	tmp = ft_calloc(rows, cols);
+	tmp2 = calloc(rows, cols);
+	free(tmp);
+	free(tmp2);
 }
 
 int	main(void)
