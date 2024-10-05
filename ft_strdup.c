@@ -14,12 +14,12 @@
 
 char	*ft_strdup(const char *s)
 {
-	size_t size;
-	size_t i;
-	char *str;
+	size_t	size;
+	size_t	i;
+	char	*str;
 
 	i = 0;
-	size = ft_strlen(s);
+	size = ft_strlen((char *)s);
 	str = malloc((size * sizeof(char)) + 1);
 	if (!str)
 		return (NULL);
