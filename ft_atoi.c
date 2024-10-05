@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+static	int	ft_isspace(int c)
+{
+	if (c == '\f' || c == '\n' || c == '\t'
+		|| c == '\r' || c == '\v' || c == ' ')
+		return (1);
+	return (0);
+}
+
 int	ft_atoi(char *nptr)
 {
 	int	is_negative;
@@ -19,7 +27,7 @@ int	ft_atoi(char *nptr)
 
 	is_negative = 1;
 	num = 0;
-	while (*nptr == ' ')
+	while (ft_isspace(*nptr))
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{
@@ -27,7 +35,8 @@ int	ft_atoi(char *nptr)
 			is_negative *= -1;
 		nptr++;
 	}
-	while (*nptr != '\0' && ft_isdigit(*nptr - '0'))
+
+	while (*nptr != '\0' && ft_isdigit(*nptr))
 	{
 		num *= 10;
 		num += (*nptr - '0');
