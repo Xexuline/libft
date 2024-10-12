@@ -6,31 +6,28 @@
 /*   By: jsabroso <jsabroso@student.42malaga.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:51:39 by jsabroso          #+#    #+#             */
-/*   Updated: 2024/09/23 18:41:47 by jsabroso         ###   ########.fr       */
+/*   Updated: 2024/10/12 16:42:39 by jsabroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 // Appends the string src to the end of dst
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_len;
 	size_t	src_len;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen((char *)src);
-	if (dst_len >= dstsize)
-		dst_len = dstsize;
-	if (dst_len == dstsize)
-		return (src_len + dstsize);
-	if (src_len < (dstsize - dst_len))
+	dst_len = 0;
+	src_len = 0;
+	while (dst[dst_len] && dst_len < size)
+		dst_len++;
+	while (src[src_len] && (1 +dst_len + src_len) < size)
 	{
-		ft_memcpy(dst + dst_len, src, dstsize - src_len + 1);
+		dst[dst_len + src_len] = src[src_len];
+		src_len++;
 	}
-	else
-	{
-		ft_memcpy(dst + dst_len, src, dstsize - dst_len - 1);
-		dst[dstsize - 1] = '\0';
-	}
-	return (dst_len + src_len);
+	if (dst_len < size)
+		dst[dst_len + src_len] = '\0';
+	return (dst_len + ft_strlen((char *)src));
 }
