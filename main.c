@@ -176,8 +176,20 @@ void	test_calloc(void) // run with valgrind1 to check
 	free(tmp2);
 }
 
+void	test_strdup()
+{
+	char	*str;
+	char	*str2;
+
+	str = "hola que ase";
+	str2 = ft_strdup(str);
+	printf("ori: %s\n", str);
+	printf("res: %s\n", str2);
+	free(str2);
+}
+
 int	main(void)
 {
-	test_atoi();
+	test_strdup();
 	return (0);
 }
