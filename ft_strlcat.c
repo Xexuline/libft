@@ -6,7 +6,7 @@
 /*   By: jsabroso <jsabroso@student.42malaga.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:51:39 by jsabroso          #+#    #+#             */
-/*   Updated: 2024/10/12 16:42:39 by jsabroso         ###   ########.fr       */
+/*   Updated: 2024/10/12 17:27:49 by jsabroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	src_len = 0;
 	while (dst[dst_len] && dst_len < size)
 		dst_len++;
-	while (src[src_len] && (1 +dst_len + src_len) < size)
+	while (src[src_len] && (1 + dst_len + src_len) < size)
 	{
 		dst[dst_len + src_len] = src[src_len];
 		src_len++;
