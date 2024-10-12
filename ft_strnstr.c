@@ -6,7 +6,7 @@
 /*   By: jsabroso <jsabroso@student.42malaga.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:58:59 by jsabroso          #+#    #+#             */
-/*   Updated: 2024/09/24 13:32:50 by jsabroso         ###   ########.fr       */
+/*   Updated: 2024/10/12 17:26:10 by jsabroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t 	j;
+	size_t	j;
 
 	if (little[0] == '\0')
 		return ((char *)big);
