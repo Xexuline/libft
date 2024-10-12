@@ -14,16 +14,14 @@
 // Locates the last occurrence of c (converted to a char) in the string
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len;
+	int	len;
 
-	len = ft_strlen((char *)s);
-	if (s[len + 1] == (char)c)
-		return ((char *)&s[len]);
-	while (len)
+	len = (int)ft_strlen((char *)s);
+	while (len >= 0)
 	{
 		if ((char)c == s[len])
 			return ((char *)&s[len]);
 		len--;
 	}
-	return (NULL);
+	return (0);
 }
