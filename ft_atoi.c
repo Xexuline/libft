@@ -6,7 +6,7 @@
 /*   By: jsabroso <jsabroso@student.42malaga.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:51:07 by jsabroso          #+#    #+#             */
-/*   Updated: 2024/09/24 15:34:37 by jsabroso         ###   ########.fr       */
+/*   Updated: 2024/10/12 17:27:05 by jsabroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	ft_atoi(char *nptr)
 			is_negative *= -1;
 		nptr++;
 	}
-
 	while (*nptr != '\0' && ft_isdigit(*nptr))
 	{
 		num *= 10;
