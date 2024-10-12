@@ -43,6 +43,16 @@ void	test_memset(void)
 	printf("real: %s\n", (char *)str2);
 	printf("\nEOF memset\n");
 }
+void	test_strlcpy()
+{
+	char dest[10];
+	char *p_dest;
+	p_dest = memset(dest, ' ', 10);
+	printf("res: %ld\n", ft_strlcpy(dest, "aaa", 2));
+	p_dest = memset(dest, ' ', 10);
+	printf("ori: %ld\n", strlcpy(dest, "aaa", 2));
+
+}
 
 void	test_strlcat(void)
 {
