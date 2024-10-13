@@ -211,8 +211,24 @@ void	test_strjoin()
 	free(new_str);
 }
 
+void	test_substr()
+{
+	char *empty = malloc(-1);
+	char s1[] = "cadena de prueba";
+	printf("esperado: NULL \nres: '%s'\n", ft_substr(empty, 0, 3));
+	printf("esperado: 'cadena de prueba'\nres: '%s'\n", ft_substr(s1, 0, 17));
+	printf("esperado: 'dena de prueba'\nres: '%s'\n", ft_substr(s1, 2, 19));
+	printf("esperado: 'c'\nres: '%s'\n", ft_substr(s1, 0, 1));
+	printf("esperado: ''\nres: '%s'\n", ft_substr(s1, 0, 0));
+	printf("esperado: ''\nres: '%s'\n", ft_substr(s1, 18, 1));
+	s1[1] = '\0';
+	printf("esperado: 'c'\nres: '%s'\n", ft_substr(s1, 1, 1));
+	printf("esperado: ''\nres: '%s'\n", ft_substr("", 0, 1));
+	printf("esperado: ''\nres: '%s'\n", ft_substr("", 1, 1));
+}
+
 int	main(void)
 {
-	test_strjoin();
+	test_substr();
 	return (0);
 }
