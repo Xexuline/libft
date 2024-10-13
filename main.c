@@ -198,8 +198,21 @@ void	test_strdup()
 	free(str2);
 }
 
+void	test_strjoin()
+{
+	char	s1[] = "lorem ipsum";
+	char	s2[] = "dolor sit amet";
+	char *new_str = ft_strjoin(s1, s2);
+	printf("deberia ser: '%s%s' \nres: '%s'\n", s1, s2, new_str);
+	free(new_str);
+	s1[0] = '\0';
+	new_str = ft_strjoin(s1, s2);
+	printf("deberia ser: '%s%s' \nres: '%s'\n", s1, s2, new_str);
+	free(new_str);
+}
+
 int	main(void)
 {
-	test_strdup();
+	test_strjoin();
 	return (0);
 }
