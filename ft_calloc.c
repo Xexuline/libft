@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Reserve memory for array on nmemb with size and fill with 0 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;

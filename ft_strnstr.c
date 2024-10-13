@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Find the first occurence of little inside big and returns it first position 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
