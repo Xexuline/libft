@@ -227,8 +227,16 @@ void	test_substr()
 	printf("esperado: ''\nres: '%s'\n", ft_substr("", 1, 1));
 }
 
+void	test_strtrim()
+{
+	char s1[] = "esta es la cadena estoriginal";
+	char set[] = "est";
+	char *new_str = ft_strtrim(s1, set);
+	printf("esperado: ta  a cadna origina \nres: %s", new_str);
+}
+
 int	main(void)
 {
-	test_substr();
+	test_strtrim();
 	return (0);
 }
