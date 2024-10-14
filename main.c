@@ -239,8 +239,36 @@ void	test_strtrim()
 	printf("esperado: 'esta es la cadena originalest' \nres: %s\n", ft_strtrim(s1, set3));
 }
 
+void	test_split()
+{
+	char s[] = "esta es la cadena";
+	int i = 0;
+	char **res;
+
+	res = ft_split(s, ' ');
+	while (res[i])
+	{
+		printf("esperado: '%s' \nres: '%s'\n", s, res[i]);
+		i++;
+	}
+	i = 0;
+	res = ft_split("cadena        con   algunos  spacios", ' ');
+	while (res[i])
+	{
+		printf("esperado: 'cadena'-'con'-'algunos'-'spacios' \nres: '%s'\n", res[i]);
+		i++;
+	}
+	res = ft_split("cadena con algunos espacios", '\t');
+	i = 0;
+	while (res[i])
+	{
+		printf("esperado: 'cadena con algunos espacios' \nres: '%s'\n", res[i]);
+		i++;
+	}
+}
+
 int	main(void)
 {
-	test_strtrim();
+	test_split();
 	return (0);
 }
