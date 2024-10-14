@@ -51,7 +51,7 @@ void	test_strlcpy()
 	printf("res: %ld\n", ft_strlcpy(dest, "aaa", 2));
 	p_dest = memset(dest, ' ', 10);
 	printf("ori: %ld\n", strlcpy(dest, "aaa", 2));
-
+	(void)p_dest;
 }
 
 void	test_strlcat(void)
@@ -99,7 +99,7 @@ void	test_memchr(void)
 	const char	c = 'q';
 
 	printf("res: %s\n", (char *)ft_memchr(s, c, 20));
-	printf("ori: %s\n", (char *)memchr(s, c, 20));
+	printf("ori: %s\n", (char *)memchr(s, c, 13));
 }
 
 void	test_memcmp(void)
@@ -112,7 +112,7 @@ void	test_memcmp(void)
 	printf("res: %d\n", ft_memcmp(s1, s2, 5));
 	printf("ori: %d\n", memcmp(s1, s2, 5));
 	printf("res: %d\n", ft_memcmp(s3, s4, 5));
-	printf("ori: %d\n", memcmp(s3, s4, 5));
+	printf("ori: %d\n", memcmp(s3, s4, 3));
 	printf("res: %d\n", ft_memcmp(s3, s4, 0));
 	printf("ori: %d\n", memcmp(s3, s4, 0));
 }
@@ -213,7 +213,7 @@ void	test_strjoin()
 
 void	test_substr()
 {
-	char *empty = malloc(-1);
+	char *empty = malloc(1);
 	char s1[] = "cadena de prueba";
 	printf("esperado: NULL \nres: '%s'\n", ft_substr(empty, 0, 3));
 	printf("esperado: 'cadena de prueba'\nres: '%s'\n", ft_substr(s1, 0, 17));
@@ -229,10 +229,14 @@ void	test_substr()
 
 void	test_strtrim()
 {
-	char s1[] = "esta es la cadena estoriginal";
+	char s1[] = "esta es la cadena originalest";
 	char set[] = "est";
-	char *new_str = ft_strtrim(s1, set);
-	printf("esperado: ta  a cadna origina \nres: %s", new_str);
+	printf("esperado: a es la cadena original \nres: %s\n", ft_strtrim(s1, set));
+	char set2[] = "es";
+	printf("esperado: ta es la cadena original \nres: %s\n", ft_strtrim(s1, set2));
+	printf("esperado: '' \nres: %s\n", ft_strtrim("", ""));
+	char set3[] = "nada";
+	printf("esperado: 'esta es la cadena originalest' \nres: %s\n", ft_strtrim(s1, set3));
 }
 
 int	main(void)
