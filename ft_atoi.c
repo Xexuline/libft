@@ -20,7 +20,7 @@ static	int	ft_isspace(int c)
 	return (0);
 }
 // Convert numbers from string to integer
-int	ft_atoi(char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int	is_negative;
 	int	num;

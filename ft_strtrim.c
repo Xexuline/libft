@@ -14,5 +14,7 @@
 // return new String with all set chars deleted from string s1
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	(void) set;
 
+	return ((char *)s1);
 }
