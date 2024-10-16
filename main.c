@@ -279,9 +279,7 @@ void	test_itoa()
 static char	s_ft_toUpper(unsigned int i, char c)
 {
 	(void)i;
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	return (c - 32);
 }
 static char s_addone(unsigned int i, char c)
 {
@@ -299,9 +297,26 @@ void	test_strmapi()
 	res = ft_strmapi(str, &s_addone);
 	printf("esperado: hola que ase\nres: %s\n", res);
 }
+static void s_ft_stri_increment(unsigned int i, char *c)
+{
+	*c = *c + i;
+}
+static void ft_stri_addone(unsigned int i, char *c)
+{
+	(void)i;
+	*c = *c + 1;
+}
+void	test_strteri()
+{
+	char	str[] = "1234";
+	ft_striteri(str, &s_ft_stri_increment);
+	printf("esperado: 1357\nres: %s\n", str);
+	ft_striteri(str, &ft_stri_addone);
+	printf("esperado: 2468\nres: %s\n", str);
+}
 
 int	main(void)
 {
-	test_strmapi();
+	test_strteri();
 	return (0);
 }
