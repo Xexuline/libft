@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 void	test_isdigit(void)
 {
@@ -315,8 +316,14 @@ void	test_strteri()
 	printf("esperado: 2468\nres: %s\n", str);
 }
 
+void	test_putchar()
+{
+	ft_putchar_fd('a', 1);
+	write(1, "\n", 1);
+}
+
 int	main(void)
 {
-	test_strteri();
+	test_putchar();
 	return (0);
 }
