@@ -322,8 +322,14 @@ void	test_putchar()
 	write(1, "\n", 1);
 }
 
+void	test_putstr()
+{
+	ft_putstr_fd("hola que ase", 1);
+	write(1, "\n", 1);
+}
+
 int	main(void)
 {
-	test_putchar();
+	test_putstr();
 	return (0);
 }
