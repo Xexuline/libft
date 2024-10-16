@@ -333,8 +333,22 @@ void	test_putendl()
 	ft_putendl_fd("hola que ase putendl", 1);
 }
 
+void	test_putnbr_fd()
+{
+	ft_putnbr_fd(1234, 1);
+	write(1, "\n", 1);
+	ft_putnbr_fd(-1234, 1);
+	write(1, "\n", 1);
+	ft_putnbr_fd(0, 1);
+	write(1, "\n", 1);
+	ft_putnbr_fd(2147483647, 1);
+	write(1, "\n", 1);
+	ft_putnbr_fd(-2147483648, 1);
+	write(1, "\n", 1);
+}
+
 int	main(void)
 {
-	test_putendl();
+	test_putnbr_fd();
 	return (0);
 }
