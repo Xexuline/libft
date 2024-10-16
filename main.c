@@ -276,8 +276,32 @@ void	test_itoa()
 	printf("esperado %d\nres: %s\n", -2147483647, ft_itoa(-2147483647));
 }
 
+static char	s_ft_toUpper(unsigned int i, char c)
+{
+	(void)i;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
+}
+static char s_addone(unsigned int i, char c)
+{
+	(void)i;
+	return (c + 1);
+}
+void	test_strmapi()
+{
+	char	*str = "hola que ase";
+	char	*res;
+
+	res = ft_strmapi(str, &s_ft_toUpper);
+	printf("esperado: HOLA QUE ASE\nres: %s\n", res);
+	free(res);
+	res = ft_strmapi(str, &s_addone);
+	printf("esperado: hola que ase\nres: %s\n", res);
+}
+
 int	main(void)
 {
-	test_itoa();
+	test_strmapi();
 	return (0);
 }
