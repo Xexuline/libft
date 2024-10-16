@@ -328,8 +328,13 @@ void	test_putstr()
 	write(1, "\n", 1);
 }
 
+void	test_putendl()
+{
+	ft_putendl_fd("hola que ase putendl", 1);
+}
+
 int	main(void)
 {
-	test_putstr();
+	test_putendl();
 	return (0);
 }
