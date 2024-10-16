@@ -267,8 +267,17 @@ void	test_split()
 	}
 }
 
+void	test_itoa()
+{
+	printf("esperado %d\nres: %s\n", 123, ft_itoa(123));
+	printf("esperado %d\nres: %s\n", -123, ft_itoa(-123));
+	printf("esperado %d\nres: %s\n", 0, ft_itoa(0));
+	printf("esperado %d\nres: %s\n", __INT_MAX__, ft_itoa(__INT_MAX__));
+	printf("esperado %d\nres: %s\n", -2147483647, ft_itoa(-2147483647));
+}
+
 int	main(void)
 {
-	test_split();
+	test_itoa();
 	return (0);
 }
