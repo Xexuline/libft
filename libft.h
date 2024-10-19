@@ -16,6 +16,12 @@
 // Remove next headers
 # include <stdio.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
 int		ft_isdigit(int n);
 int		ft_isalpha(int n);
 int		ft_isalnum(int n);
