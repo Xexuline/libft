@@ -373,8 +373,29 @@ void test_lstadd_front()
 	printf("next: %s\n", (char *)(*lst)->next->content);
 }
 
+void test_lstsize()
+{
+	t_list *lst;
+	t_list *new;
+	t_list *new2;
+	t_list *new3;
+
+	lst = ft_lstnew("hola");
+	new = ft_lstnew("que");
+	new2 = ft_lstnew("ase");
+	new3 = ft_lstnew("?");
+	printf("expected: 1, size: %d\n", ft_lstsize(lst));
+	lst->next = new;
+	printf("expected: 2, size: %d\n", ft_lstsize(lst));
+	new->next = new2;
+	printf("expected: 3, size: %d\n", ft_lstsize(lst));
+	new2->next = new3;
+	printf("expected: 4, size: %d\n", ft_lstsize(lst));
+
+}
+
 int	main(void)
 {
-	test_lstadd_front();
+	test_lstsize();
 	return (0);
 }
