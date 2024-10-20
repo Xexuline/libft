@@ -457,8 +457,26 @@ void test_lstdelone()
 	printf("expected: que, res: %s\n", (char *)lst->next->content);
 }
 
+void test_lstclear()
+{
+	t_list *lst;
+	t_list *new;
+	t_list *new2;
+	t_list *new3;
+
+	lst = ft_lstnew("hola");
+	new = ft_lstnew("que");
+	new2 = ft_lstnew("ase");
+	new3 = ft_lstnew("?");
+	lst->next = new;
+	new->next = new2;
+	new2->next = new3;
+	ft_lstclear(&lst, s_ft_del);
+	printf("expected: NULL, res: %p\n", lst);
+}
+
 int	main(void)
 {
-	test_lstdelone();
+	test_lstclear();
 	return (0);
 }
