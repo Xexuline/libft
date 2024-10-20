@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+// Create a new list with the content passed as argument
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;

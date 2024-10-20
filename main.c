@@ -370,6 +370,7 @@ void test_lstadd_front()
 	ft_lstadd_front(lst, new);
 	printf("content debería cambiar a nuevo\n");
 	printf("content: %s\n", (char *)(*lst)->content);
+	printf("next: %s\n", (char *)(*lst)->next->content);
 }
 
 int	main(void)
