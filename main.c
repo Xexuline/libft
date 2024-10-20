@@ -357,8 +357,23 @@ void test_lstnew()
 	printf("EOF lstnew\n");
 }
 
+void test_lstadd_front()
+{
+	t_list *old;
+	t_list **lst = (t_list**)malloc(sizeof(t_list *));
+	t_list *new;
+
+	old = ft_lstnew("antiguo");
+	new = ft_lstnew("nuevo");
+	*lst = old;
+	printf("content: %s\n", (char *)(*lst)->content);
+	ft_lstadd_front(lst, new);
+	printf("content debería cambiar a nuevo\n");
+	printf("content: %s\n", (char *)(*lst)->content);
+}
+
 int	main(void)
 {
-	test_lstnew();
+	test_lstadd_front();
 	return (0);
 }
