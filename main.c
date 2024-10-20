@@ -411,9 +411,28 @@ void test_lstast()
 	new2->next = new3;
 	printf("expected: ?, res: %s\n", (char *)ft_lstlast(lst)->content);
 }
+void test_lstadd_last()
+{
+	t_list *lst;
+	t_list *new;
+	t_list *new2;
+	t_list *new3;
+
+	lst = ft_lstnew("hola");
+	new = ft_lstnew("que");
+	new2 = ft_lstnew("ase");
+	new3 = ft_lstnew("?");
+	printf("expected: hola, res: %s\n", (char *)ft_lstlast(lst)->content);
+	ft_lstadd_back(&lst, new);
+	printf("expected: que, res: %s\n", (char *)ft_lstlast(lst)->content);
+	ft_lstadd_back(&lst, new2);
+	printf("expected: ase, res: %s\n", (char *)ft_lstlast(lst)->content);
+	ft_lstadd_back(&lst, new3);
+	printf("expected: ?, res: %s\n", (char *)ft_lstlast(lst)->content);
+}
 
 int	main(void)
 {
-	test_lstast();
+	test_lstadd_last();
 	return (0);
 }

@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsabroso <jsabroso@student.42malaga.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/20 12:32:34 by jsabroso          #+#    #+#             */
-/*   Updated: 2024/10/20 12:35:41 by jsabroso         ###   ########.fr       */
+/*   Created: 2024/10/20 12:37:12 by jsabroso          #+#    #+#             */
+/*   Updated: 2024/10/20 12:58:45 by jsabroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Returns the last element of a list
-t_list	*ft_lstlast(t_list *lst)
+// Adds the element ’new’ at the end of the list
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*tmp;
+	t_list	*last;
 
-	if (!lst)
-		return (NULL);
-	tmp = lst;
-	while(tmp->next)
-		tmp = tmp->next;
-	return (tmp);
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	last = ft_lstlast(*lst);
+	last->next = new;
 }
