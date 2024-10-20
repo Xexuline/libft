@@ -347,8 +347,18 @@ void	test_putnbr_fd()
 	write(1, "\n", 1);
 }
 
+void test_lstnew()
+{
+	t_list *new;
+	char *content = "hola que ase";
+	new = ft_lstnew(content);
+	printf("content: %s\n", (char *)new->content);
+	printf("next: %p\n", new->next);
+	printf("EOF lstnew\n");
+}
+
 int	main(void)
 {
-	test_putnbr_fd();
+	test_lstnew();
 	return (0);
 }
