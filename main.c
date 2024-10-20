@@ -431,8 +431,34 @@ void test_lstadd_last()
 	printf("expected: ?, res: %s\n", (char *)ft_lstlast(lst)->content);
 }
 
+static void s_ft_del(void *content)
+{
+	(void)content;
+	printf("content to remove: %s\n", (char *)content);
+	content = NULL;
+}
+void test_lstdelone()
+{
+	t_list *lst;
+	t_list *new;
+	t_list *new2;
+	t_list *new3;
+
+	lst = ft_lstnew("hola");
+	new = ft_lstnew("que");
+	new2 = ft_lstnew("ase");
+	new3 = ft_lstnew("?");
+	lst->next = new;
+	new->next = new2;
+	new2->next = new3;
+	printf("expected: ?, res: %s\n", (char *)ft_lstlast(lst)->content);
+	ft_lstdelone(new2, s_ft_del);
+	printf("expected: hola, res: %s\n", (char *)lst->content);
+	printf("expected: que, res: %s\n", (char *)lst->next->content);
+}
+
 int	main(void)
 {
-	test_lstadd_last();
+	test_lstdelone();
 	return (0);
 }
