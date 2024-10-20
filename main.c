@@ -475,8 +475,29 @@ void test_lstclear()
 	printf("expected: NULL, res: %p\n", lst);
 }
 
+static void s_ft_log(void *content)
+{
+	printf("content: %s\n", (char *)content);
+}
+void test_lstiter()
+{
+	t_list *lst;
+	t_list *new;
+	t_list *new2;
+	t_list *new3;
+
+	lst = ft_lstnew("hola");
+	new = ft_lstnew("que");
+	new2 = ft_lstnew("ase");
+	new3 = ft_lstnew("?");
+	lst->next = new;
+	new->next = new2;
+	new2->next = new3;
+	ft_lstiter(lst, s_ft_log);
+}
+
 int	main(void)
 {
-	test_lstclear();
+	test_lstiter();
 	return (0);
 }
