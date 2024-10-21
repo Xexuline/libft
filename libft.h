@@ -6,7 +6,7 @@
 /*   By: jsabroso <jsabroso@student.42malaga.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 10:23:39 by jsabroso          #+#    #+#             */
-/*   Updated: 2024/09/14 17:39:32 by jsabroso         ###   ########.fr       */
+/*   Updated: 2024/10/21 12:51:03 by jsabroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

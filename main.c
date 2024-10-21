@@ -436,6 +436,7 @@ static void s_ft_del(void *content)
 	(void)content;
 	printf("content to remove: %s\n", (char *)content);
 	content = NULL;
+	free(content);
 }
 void test_lstdelone()
 {
@@ -496,8 +497,42 @@ void test_lstiter()
 	ft_lstiter(lst, s_ft_log);
 }
 
+static void	*s_ft_lst_to_upper(void *content)
+{
+	char	*aux;
+	int		i;
+
+	aux = ft_strdup((char *)content);
+	i = 0;
+	while (aux[i])
+	{
+		if (ft_isalpha(aux[i]))
+			aux[i] = ft_toupper(aux[i]);
+		i++;
+	}
+	return (aux);
+}
+void test_lstmap()
+{
+	t_list	*lst;
+	t_list	*new;
+	t_list	*new2;
+	t_list	*new3;
+	t_list	*res;
+
+	lst = ft_lstnew("hola");
+	new = ft_lstnew("que");
+	new2 = ft_lstnew("ase");
+	new3 = ft_lstnew("?");
+	lst->next = new;
+	new->next = new2;
+	new2->next = new3;
+	res = ft_lstmap(lst, &s_ft_lst_to_upper, &s_ft_del);
+	ft_lstiter(res, s_ft_log);
+}
+
 int	main(void)
 {
-	test_lstiter();
+	test_lstmap();
 	return (0);
 }
