@@ -266,6 +266,25 @@ void	test_split()
 		printf("esperado: 'cadena con algunos espacios' \nres: '%s'\n", res[i]);
 		i++;
 	}
+
+	char s2[] = "cadenaSinEspacios";
+	printf("cadena: %s\n", s2);
+	res = ft_split(s2, ' ');
+	i = 0;
+	while (res[i])
+	{
+		printf("esperado: 'cadenaSinEspacios' \nres: '%s'\n", res[i]);
+		i++;
+	}
+	char s3[] = "xxxxxxxxhello!";
+	printf("cadena: %s\n", s3);
+	res = ft_split(s3, 'x');
+	i = 0;
+	while (res[i])
+	{
+		printf("esperado: 'hello!' \nres: '%s'\n", res[i]);
+		i++;
+	}
 }
 
 void	test_itoa()
@@ -533,6 +552,6 @@ void test_lstmap()
 
 int	main(void)
 {
-	test_lstmap();
+	test_split();
 	return (0);
 }
