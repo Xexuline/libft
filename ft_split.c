@@ -6,7 +6,7 @@
 /*   By: jsabroso <jsabroso@student.42malaga.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 13:45:00 by jsabroso          #+#    #+#             */
-/*   Updated: 2024/10/14 17:14:04 by jsabroso         ###   ########.fr       */
+/*   Updated: 2024/10/22 18:57:44 by jsabroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	count(char const *s, char c)
 	return (counter);
 }
 
-static void	set_positions(int *start, int *end, char const *s, char c)
+static void	get_positions(int *start, int *end, char const *s, char c)
 {
 	while (s[*start] == c)
 		(*start)++;
@@ -67,17 +67,17 @@ char	**ft_split(char const *s, char c)
 	start = 0;
 	end = 0;
 	arr_pos = 0;
-	while (s[start])
+	while (arr_pos < count(s, c))
 	{
-		set_positions(&start, &end, s, c);
-		if (s[end] || end > start)
+		get_positions(&start, &end, s, c);
+		arr[arr_pos] = ft_substr(s, start, end - start);
+		if (!arr[arr_pos])
 		{
-			arr[arr_pos] = ft_substr(s, start, end - start);
-			if (!arr[arr_pos])
-				clean(arr, arr_pos);
-			start = end;
-			arr_pos++;
+			clean(arr, arr_pos);
+			return (NULL);
 		}
+		start = end;
+		arr_pos++;
 	}
 	arr[arr_pos] = NULL;
 	return (arr);
